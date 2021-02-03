@@ -23,13 +23,26 @@ class BudgetList(object):
     def __len__(self):
         return (self.expenses + self.overages)
 
+    def __iter__(self):
+        iter(self.expenses)
+        self.iter_o = iter(self.overages)
+        return self
+
+    def __next__(self):
+        try:
+            return __next__(self.iter_o)
+
 def main():
     myBudgetList = BudgetList(1200)
     expenses = Expense.Expenses()
     expenses.read_expenses('data/spending_data.csv')
     for expense in expenses.list:
         myBudgetList.append(expense.amount)
+        return
     print('The count of all expenses: ' + str(len(myBudgetList)))
+    for entry in myBudgetList:
+        print(entry)
+        return
 
 if __name__ == "__main__":
      main()
