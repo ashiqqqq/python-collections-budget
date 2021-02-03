@@ -1,4 +1,6 @@
-import Expense
+from . import Expense
+
+
 
 class BudgetList(object):
     """docstring for ."""
@@ -21,6 +23,14 @@ class BudgetList(object):
     def __len__(self):
         return (self.expenses + self.overages)
 
-    def main(myBudgetList):
-        BudegtList = 1200
-        return BudgetList
+def main():
+    myBudgetList = BudgetList(1200)
+    expenses = Expense.Expenses()
+    expenses.read_expenses('data/spending_data.csv')
+    for expense in expenses.list:
+        myBudgetList.append(expense.amount)
+
+        print('The count of all expenses:' + str(len(myBudgetList)))
+
+if __name__ == "__main__":
+     main()
