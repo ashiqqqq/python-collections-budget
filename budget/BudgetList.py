@@ -1,3 +1,5 @@
+import Expense
+
 class BudgetList(object):
     """docstring for ."""
 
@@ -19,7 +21,6 @@ class BudgetList(object):
     def __len__(self):
         return (self.expenses + self.overages)
 
-    def __main__(myBudgetList):
+    def main(myBudgetList):
         BudegtList = 1200
         return BudgetList
-        
